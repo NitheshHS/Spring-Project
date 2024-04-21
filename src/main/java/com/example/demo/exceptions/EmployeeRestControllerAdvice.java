@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class EmployeeRestControllerAdvice {
 
     //Handle exception of specific type
-    @ExceptionHandler({NoEmployeeDataInDBException.class})
-    public ResponseEntity<EmployeeErrorResponse> employeeExceptionHandler(NoEmployeeDataInDBException exception){
+    @ExceptionHandler
+    public ResponseEntity<EmployeeErrorResponse> employeeExceptionHandler(Exception exception){
         EmployeeErrorResponse errorResponse=new EmployeeErrorResponse();
         errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
         errorResponse.setMessage(exception.getMessage());
@@ -19,12 +19,4 @@ public class EmployeeRestControllerAdvice {
         return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
     }
 
-    @ExceptionHandler({NoEmployeeDataInDBException.class})
-    public ResponseEntity<EmployeeErrorResponse> employeeNotFoundHandler(NoEmployeeDataInDBException.EmployeeNotFoundException exception){
-        EmployeeErrorResponse errorResponse=new EmployeeErrorResponse();
-        errorResponse.setStatus(HttpStatus.NOT_FOUND.value());
-        errorResponse.setMessage(exception.getMessage());
-        errorResponse.setTimeStamp(System.currentTimeMillis());
-        return new ResponseEntity<>(errorResponse, HttpStatus.NOT_FOUND);
-    }
 }
