@@ -1,0 +1,31 @@
+1. @Component: This annotation marks a Java class as a Spring component, allowing it to be automatically detected and registered in the application context as a bean.
+
+2. @Scope: Used to define the scope of a bean, such as singleton, prototype, request, session, etc. It can be applied at the class level.
+
+3. @Primary: When multiple beans of the same type are present, @Primary indicates that a particular bean should be given preference for autowiring.
+
+4. @Autowired: This annotation is used for automatic dependency injection. It injects beans by type. You can use @Autowired on constructors, fields, and setter methods.
+
+5. @Lazy: Indicates that a bean should be lazily initialized, i.e., created only when it is first requested.
+
+6. @Qualifier: Used along with @Autowired to specify which bean should be injected when multiple beans of the same type are present. It is used to disambiguate autowiring.
+
+7. @Bean: This annotation is used in Java configuration to explicitly declare a bean definition method. It is used within classes annotated with @Configuration.
+
+8. @Configuration: Marks a class as a configuration class in Spring, allowing it to define beans using @Bean annotated methods. This is an alternative to XML configuration in Spring.
+
+9. @PostConstruct: This annotation is used on a method that should be called after a bean has been initialized, i.e., after its dependencies have been injected and all the necessary configurations have been set up. This method is typically used for initialization tasks.
+
+10. @PreDestroy: This annotation is used on a method that should be called before a bean is destroyed, i.e., when the application context is shutting down or when the bean's scope ends. This method is commonly used for releasing resources or performing cleanup tasks.
+
+11. @Transactional: Automatically begin and end the JPA transaction.
+
+12. @Repository: Spring automatically register DAO implementation.
+
+13. @ControllerAdvice: Centralizes exception handling and global model attributes for all controllers in a Spring MVC application.
+
+14. @PathVariable: Binds a method parameter to a URI template variable in a request URL.
+
+15. @ExceptionHandler: Handles specific exceptions by defining methods to generate appropriate error responses.
+
+16. @Service: The @Service annotation in Spring is used to indicate that a class is a service component in the Spring application context. It is a specialization of the @Component annotation and is typically used to annotate service layer classes, such as service beans that handle business logic, transaction management, or other services in a Spring application.
